@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('partials/head', {pageTitle: 'Meow!'});
+ %>  <link rel="stylesheet" href="/css/404.css">
+</head>
+<body>
+  <%- include('partials/header'); %>
+  <main>
+    <div class="container">
+      <div class="error-box">
+        <small class="error-code">Error: 404</small>
+        <h1 class="error-title">Ups!</h1>
+        <p class="error-text">Parece que nadie está…</p>
+        <a class="button button--accent" href="/">
+          <img src="/images/cat-solid.svg" class="button__icon">
+          Home
+        </a>
+      </div>
+    </div>
+  </main>
+  <%- include('partials/footer'); %>
+</body>
+

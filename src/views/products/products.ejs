@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Meow!'}); %>
+        <link rel="stylesheet" href="/css/homeProductos.css">
+        <link rel="stylesheet" href="/css/homeClientes.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+
+            <!-- PRODUCTS -->
+            <section id="products">
+                <h2 class="title-productos title secciones">Nuestra Selección</h2>
+                <div class="productos">
+                    <% product.forEach(element => { %>
+                        <div class="card">
+                            <a href="/products/<%= element.product_id %>" class="link-product"><img src="/images/food/<%= element.productImage %>" class="card__image"></a>
+                            <div class="card__text-container">
+                                <h3 class="card__title">
+                                    <%= element.productName %>
+                                </h3>
+                                <p class="card__text description">
+                                    <%= element.shortDescription %>
+                                </p>
+                                <div class="card__text-btn-container">
+                                    <p class="card__text price">$
+                                        <%= element.productPrice %>
+                                    </p>
+                                    <form action="/cart/addCart" class="plus-price" method="post">
+                                        <input type="hidden" name="product_id" value="<%= element.product_id%>">
+                                        <input type="hidden" name="price" value="<%= element.productPrice %>">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <button type="submit" class="card__button"><img src="/images/plus.svg" alt=""></button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+            </section>
+
+
+        </main>
+
+        <%- include('../partials/footer'); %>
+</body>

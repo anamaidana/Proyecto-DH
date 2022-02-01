@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Meow!'}); %>
+        <link rel="stylesheet" href="/css/productDetail.css">
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <main>
+            <div class="form-container">
+                <h1 class="title seccion">Editar Mi Perfil</h1>
+                <div class="field">
+                    <img src="/images/users/<%= user.image %>" class="thumbnail">
+                </div>
+
+                <form action="/users/editProfile/<%=user.user_id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="field">
+                        <label for="name">
+                            <span>Nombre completo</span>
+                            <input type="text" name="name" id="name" value=<%= user.name %>>
+                        </label>
+                        <% if ( locals.errors && errors.name) { %>
+                            <p class="text-danger">
+                                <%= errors.name.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <label for="email">
+                            <span>Email</span>
+                            <input type="email" name="email" id="email" value=<%= user.email %>>
+                        </label>
+                        <% if ( locals.errors && errors.email) { %>
+                            <p class="text-danger">
+                                <%= errors.email.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <label for="password">
+                            <span>Contraseña:</span>
+                            <input type="password" name="password" id="password">
+                        </label>
+                        <% if ( locals.errors && errors.password) { %>
+                            <p class="text-danger">
+                                <%= errors.password.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <label for="confirmar-contraseña">
+                            <span>Confirmar contraseña:</span>
+                            <input type="password" name="confirmPassword" id="confirmar-contraseña">
+                        </label>
+                        <% if ( locals.errors && errors.confirmPassword) { %>
+                            <p class="text-danger">
+                                <%= errors.confirmPassword.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <div class="file-select">Cambiar la imagen:
+                            <div class="upload-image__label file-select"></div>
+                            <input type="hidden" name="oldImagen" value="<%= user.image%>">
+                            <input type='file' name="image" id="productAddImage" accept="image/.jpg, .jpeg, .png">
+                        </div>
+                    </div>
+                    <div class="button-product">
+                        <button type="submit" class="button">Guardar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <%- include('../partials/footer'); %>
+</body>

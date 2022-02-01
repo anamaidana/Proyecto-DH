@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Productos!'}); %>
+        <link rel="stylesheet" href="/css/productCart.css">
+        <link rel="stylesheet" href="/css/404.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <section>
+                <div class="small-container cart-page">
+                    <% if(cartProduct.length != 0){ %>
+                        <h3 class="page-title">Detalle de Items</h3>
+                        <table class="product-item">
+                            <tr>
+                                <th></th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                            </tr>
+                            <tr class="product-n">
+                                <% cartProduct.forEach(item => { %>
+                                    <td>
+                                        <form action="/cart/delete" method="POST">
+                                            <input type="hidden" name="item_id" value="<%= item.product_id %>">
+                                            <button type="submit" class="btn btn-danger "><i class="fas fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <div class="cart-info">
+                                            <img src="/images/food/<%= item.product.productImage %>" alt="<%= item.product.productName %>">
+                                            <div>
+                                                <p>
+                                                    <%= item.product.productName %>
+                                                </p>
+                                                <small><%= item.product.shortDescription %></small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-info">
+                                            <p>
+                                                <%= item.quantity %>
+                                            </p>
+                                        </div>
+                                    </td>
+                                    <td>$
+                                        <%= item.subtotal; %>
+                                    </td>
+                            </tr>
+                            <% }); %>
+                        </table>
+
+                        <div class="total-price">
+                            <table>
+                                <tr>
+                                    <td>Total a pagar</td>
+                                    <td>$
+                                        <%= total %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="/products">Agregar más productos al carrito</a>
+                        <div class="checkout-container">
+                            <form action="/cart/shop" method="POST">
+                                <div class="small-container cart-paid">
+                                    <h4 class="page-subtitle">Método de Pago</h4>
+                                    <label><input hidden type="radio" name="mercadoPago" value="1"> 
+                                <img src="/images/mercado-pago.png">
+                                </label>
+                                </div>
+                                <div class="button-cart">
+                                    <button class="button" type="submit" name="checkout" value="pagar">Pagar</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <% } else { %>
+                            <div class="error-box">
+                                <h2>No tienes productos agregados a tu carrito!</h2>
+                            </div>
+                            <% } %>
+                </div>
+            </section>
+
+        </main>
+
+        <%- include('../partials/footer'); %>
+</body>

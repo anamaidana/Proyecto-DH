@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Meow!' }); %>
+        <script src="/js/registerValidation.js" defer></script>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <main>
+            <div class="form-container">
+                <form class="register-form" id='register' novalidate action="/users/editUser/<%=user.user_id %>?_method=PUT" method="POST">
+                    <h1 class="title seccion">Editar un usuario</h1>
+                    <div class="field">
+                        <label for="name">
+                        <span>Nombre y Apellido:</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                        <input type="text" name="name" id="name" title="No válido" pattern="^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$" required minlength="2" value=<%=user.name%>>
+                        <span class="error" aria-live="polite"></span>
+                        <i class="fas input-icon"></i>
+                        <% if ( locals.errors && errors.name) { %>
+                            <p class="text-danger">
+                                <%= errors.name.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <label for="email">
+                        <span>E-mail:</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                        <input type="email" name="email" id="email" title="Ingresá un email válido" required value=<%=user.email%>>
+                        <span class="error" aria-live="polite"></span>
+                        <i class="fas fa-check-circle input-icon"></i>
+                        <i class="fas fa-exclamation-circle input-icon"></i>
+                        <% if ( locals.errors && errors.email) { %>
+                            <p class="text-danger">
+                                <%= errors.email.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <label for="password">
+                        <span>Contraseña:</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                        <input type="password" name="password" id="password" title="Debe tener mínimo 8 caracteres, incluir una mayúscula, un número y un símbolo" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@.\-_$_!%*¿?&+])[A-Za-z\d@.\-$_!%*¿?&+]{8,32}$" value=<%=user.password%>>
+                        <span class="error" aria-live="polite"></span>
+                        <i class="fas fa-check-circle input-icon"></i>
+                        <i class="fas fa-exclamation-circle input-icon"></i>
+                        <% if ( locals.errors && errors.password) { %>
+                            <p class="text-danger">
+                                <%= errors.password.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <label for="confirmar-contraseña">
+                        <span>Confirmar contraseña:</span>
+                        <strong><abbr title="required">*</abbr></strong>
+                    </label>
+                        <input type="password" name="confirmPassword" id="confirmar-contraseña" title="Las contraseñas no coinciden" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*¿?&+])[A-Za-z\d@$!%*¿?&+]{8,32}$" value=<%=user.confirmPassword%>>
+                        <span class="error" aria-live="polite"></span>
+                        <i class="fas fa-check-circle input-icon"></i>
+                        <i class="fas fa-exclamation-circle input-icon"></i>
+                        <% if ( locals.errors && errors.confirmPassword) { %>
+                            <p class="text-danger">
+                                <%= errors.confirmPassword.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <legend>Categoria de permisos</legend>
+                        <select name="rights" required>
+                            <option disabled value="#">Seleccione un permiso</option>
+                            <option value="2" <%=user.rights=="2" ? "selected" : null %>>Administrador</option>
+                            <option value="1" <%=user.rights=="1" ? "selected" : null %>>Usuario</option>
+                            </select>
+                        <% if ( locals.errors && errors.rights) { %>
+                            <p class="text-danger">
+                                <%= errors.rights.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div>
+                        <button type="submit" value="Ingresar" class="button button--reg button--smal error-msg button--outline">Guardar</button>
+                    </div>
+
+                </form>
+                </form>
+                <hr class="form-separator" />
+                <form action="/users/<%= user.user_id %>?_method=DELETE" method="POST">
+                    <div class="button-product">
+                        <button type="submit" class="delete-button" onclick="return confirm('Estás seguro que deseas eliminar el registro?');">Eliminar este usuario</button>
+                    </div>
+                </form>
+            </div>
+
+        </main>
+        <%- include('../partials/footer'); %>
+</body>

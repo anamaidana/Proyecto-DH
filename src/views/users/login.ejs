@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Meow!'}); %>
+    <script src="/js/login.js" defer></script>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <div class="form-container">
+                <form id="login" class="login-form" action="/users/login" method="POST">
+                    <h1 class="title seccion">Bienvenid@</h1>
+                    <div class="field">
+                        <label for="email">
+                    <span>Email:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                        <input type="email" name="email" id="email" title="No válido" requerid 
+                        class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>"> 
+                        <span class="error" aria-live="polite"></span>
+                        <i class="fas fa-check-circle input-icon"></i>
+                        <i class="fas fa-exclamation-circle input-icon"></i>
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="text-danger">
+                                <%= errors.email.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field">
+                        <label for="password">
+                    <span>Contraseña:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                        <input type="password" name="password" id="password" minlength="8" requerid class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.password : null %>">
+                        <span class="error" aria-live="polite"></span>
+                        <i class="fas fa-check-circle input-icon"></i>
+                        <i class="fas fa-exclamation-circle input-icon"></i>
+                        <% if (locals.errors && errors.password) { %>
+                            <p class="text-danger">
+                                <%= errors.password.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <div class="field-checkbox">
+
+                        <div class="field-checkbox-hija"><input type="checkbox" name="rememberUser" id="rememberUser" class="checkbox"></div>
+                        <div class="field-checkbox-hija">
+                            <p><a class="rememberUser">Recordar mi usuario</a></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" value="Ingresar" class="button button--small button--outline">Ingresar</button>
+                    </div>
+                    <p><a class="registrado" href="/users/register">¿No estás registrado?</a></p>
+                </form>
+            </div>
+            <!-- <div class="horizontalBlock horizontalBlock--yellow"></div> -->
+        </main>
+
+        <%- include('../partials/footer'); %>
+</body>

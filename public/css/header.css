@@ -1,0 +1,135 @@
+/* ********** header ********** */
+
+.header {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  background-color: var(--backgroundHeader-color);
+  z-index: 100;
+}
+
+.header-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--headerHeight);
+} 
+
+.nav-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* ********** checkout icon ********** */
+.button-carrito {
+  display: none;
+}
+
+/* ********** logo ********** */
+.logo {
+  display: block;
+  max-width: 5rem;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo:hover,
+.logo:focus {
+  transform: scale(1.2);
+}
+
+/* ********** navbar menu ********** */
+.nav-button {
+  display: block;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+
+.nav-menu {
+  position: fixed;
+  right: -100%;
+  top: var(--headerHeight);
+  flex-direction: column;
+  background-color: var(--backgroundHeader-color);
+  width: 16rem;
+  height: calc(100vh - var(--headerHeight));
+  margin: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: left;
+  transition: right 200ms ease-in-out;
+}
+
+.nav-menu.active {
+  right: 0;
+  z-index: 10;
+}
+
+/* ********** hamburger ********** */
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--color-font);
+}
+
+.nav-item a {
+  display: block;
+  padding: 1.25rem 0;
+}
+
+.nav-item a i {
+  min-width: 1.5ch;
+  opacity: .25;
+}
+
+.nav-item a:hover, 
+.nav-item a:focus {
+  
+}
+
+.nav-item a:hover i, 
+.nav-item a:focus i {
+  min-width: 2ch;
+  opacity: 1;
+  color: var(--color-primary);
+}
+
+
+.nav-button.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-button.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-button.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ********** media queries ********** */
+@media screen and (min-width: 768px) {
+  .button-carrito {
+    display: block;
+  }
+  .button-carrito__icon {
+    height: 1.5rem;
+    display: block;
+    cursor: pointer;
+  }
+}

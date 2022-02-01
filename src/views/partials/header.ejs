@@ -1,0 +1,80 @@
+<header class="header">
+    <div class="container">
+        <div class="header-wrapper">
+            <a href="/" class="logo" title="meow home">
+                <img src="/images/logo.svg" alt="logo de meow" width="80" height="28" />
+            </a>
+            <nav>
+                <div class="nav-wrapper">
+                    <% if (locals.isLogged){ %>
+                        <a class="button-carrito" href="/cart">
+                            <img src="/images/shopping-basket-solid.svg" alt="carrito compras" class="button-carrito__icon" />
+                        </a>
+                        <% } %>
+                            <% if (!locals.isLogged){ %>
+                                <a href="/users/login" class="button button--small button--outline">
+                        Login
+                    </a>
+                                <a href="/users/register" class="button button--small">
+                        Register
+                    </a>
+                                <% } %>
+                                    <button class="nav-button">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/#aboutus" class="nav-link ">
+                            <i class="fas fa-paw "></i>  Nosotros
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="/products " class="nav-link ">
+                            <i class="fas fa-th "></i> Productos
+                        </a>
+                    </li>
+                    
+                    <% if (locals.isLogged){ %>
+                        <li class="nav-item ">
+                            <a href="/users/profile " class="nav-link ">
+                                <i class="fas fa-user "></i> Profile
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="/cart/historial " class="nav-link ">
+                                <i class="fas fa-shopping-basket "></i> Historial Compras
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="/users/Logout " class="nav-link ">
+                                <i class="fas fa-sign-out-alt "></i> Logout
+                            </a>
+                        </li>
+
+                        <% if (locals.userLogged.rights ==2){ %>
+                            <li class="nav-item ">
+                                <a href="/products/adminProduct " class="nav-link ">
+                                    <i class="fas fa-lock "></i> Admin Productos
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="/users/adminUsers " class="nav-link ">
+                                    <i class="fas fa-lock "></i> Admin Usuarios
+                                </a>
+                            </li>
+                            <% } %>
+                                <% } %>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

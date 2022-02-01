@@ -1,0 +1,27 @@
+.error-box {
+  width: 100%;
+  max-width: 640px;
+  min-height: 50vh;
+  margin: 5rem auto 8rem;
+  background-image: url(../images/paws.svg);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.error-title {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.error-text {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-code {
+  font-size: .75rem;
+  color: var(--color-fontLight);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}

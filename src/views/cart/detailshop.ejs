@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Historial Compras!'}); %>
+        <link rel="stylesheet" href="/css/productCart.css">
+        <link rel="stylesheet" href="/css/404.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <section>
+                <div class="small-container cart-page">
+                    <h3 class="page-title">Detalle Orden de Compra:
+                        <%= cart.cart_id %>
+                    </h3>
+                    <table class="product-item">
+                        <tr>
+                            <th>Productos</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                        </tr>
+                        <% cart.items.forEach(item => { %>
+                            <tr class="product-n">
+                                <td>
+                                    <div class="cart-info">
+                                        <img src="/images/food/<%= item.product.productImage %>" alt="<%= item.product.productName %>">
+                                        <div>
+                                            <p>
+                                                <%= item.product.productName %>
+                                            </p>
+                                            <small><%= item.product.shortDescription %></small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cart-info">
+                                        <p>
+                                            <%= item.quantity %>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>$
+                                    <%= item.subtotal; %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </table>
+                    <div class="total-price">
+                        <table>
+                            <tr>
+                                <td>Total abonado</td>
+                                <td>$
+                                    <%= cart.total %>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="small-container cart-paid">
+                        <h4 class="page-subtitle">Método de Pago</h4>
+                        <% if(cart.payment = 'mercadoPago'){ %>
+                            <label><img src="/images/mercado-pago.png"></label>
+                            <% }; %>
+                    </div>
+
+        </main>
+
+        <%- include('../partials/footer'); %>
+</body>

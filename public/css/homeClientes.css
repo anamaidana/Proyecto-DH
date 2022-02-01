@@ -1,0 +1,161 @@
+.title-clientes {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.customers {
+  margin-top: 0;
+  background-color: #fcfbf9;
+  font-family: var(--ff-primary);
+  padding-bottom: 2rem;
+  font-size: 14px;
+}
+
+.customers-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  padding: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.customers-card__text {
+  margin-bottom: 1rem;
+  display: flex;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.customers-card__description {
+  font-weight: 400;
+}
+
+.customers-photo {
+  max-width: 5rem;
+  display: block;
+  border-radius: 50%;
+  display: block;
+}
+
+.quote-icon {
+  position: absolute;
+  left: 9rem;
+  bottom: 1rem;
+  width: 8rem;
+  height: auto;
+  display: block;
+}
+
+.fa-quote-left {
+  color: var(--color-font);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card-customer {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.customer-text {
+  margin-left: 1rem;
+}
+
+.customers-city {
+  font-size: 0.8em;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .customers-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .customers-card {
+    z-index: 10;
+    position: relative;
+    margin: 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 2rem);
+  }
+
+  .item-1 {
+    grid-column: 2/7;
+    grid-row: 1/5;
+  }
+  .item-2 {
+    grid-column: 7/12;
+    grid-row: 4/8;
+  }
+  .item-3 {
+    grid-column: 4/9;
+    grid-row: 8/12;
+  }
+
+  .customers-card__description {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .customers-card__description-person {
+    margin-left: 0.8rem;
+  }
+
+  .customers-card__text p {
+    z-index: 1;
+    position: relative;
+  }
+
+  .quote-icon {
+    width: 9rem;
+    left: 10rem;
+    bottom: 5rem;
+  }
+
+  .item-3 {
+    align-items: flex-end;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .portada {
+    font-size: 1.6rem;
+  }
+
+  .customers-card__text {
+    font-size: 0.875rem;
+  }
+
+  .quote-icon {
+    width: 10rem;
+    right: -3rem;
+    left: unset;
+  }
+
+  .item-3 .quote-icon {
+    right: unset;
+    left: -3rem;
+  }
+
+  .customers-photo {
+    padding-bottom: 0.5rem;
+  }
+}

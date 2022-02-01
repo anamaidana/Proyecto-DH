@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Crear producto'}); %>
+    <script src="/js/createProductValidation.js" defer></script>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <div class="container crear-producto">
+                <div class="form-container">
+                    <h1 class="title seccion">Crear Producto</h1>
+                    <form action="createProduct" novalidate method="POST" enctype="multipart/form-data">
+                        <div class="field">
+                            <label for="name">
+                                <span>Nombre del producto</span>
+                                <input type="text" name="name" id="name" required minlength="5" value="<%= locals.oldData ? oldData.name : null %>">
+                                <span class="error" aria-live="polite"></span>
+                            </label>
+                            <% if ( locals.errors && errors.name) { %>
+                                <p class="text-danger">
+                                    <%= errors.name.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <div class="field">
+                            <label for="price">
+                                <span>Precio</span>
+                                <input type="number" name="price" id="price" required placeholder="Ej. 4200.99"  value="<%= locals.oldData ? oldData.price : null %>">
+                                <span class="error" aria-live="polite"></span>
+                            </label>
+                            <% if ( locals.errors && errors.price) { %>
+                                <p class="text-danger">
+                                    <%= errors.price.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+
+                        <div class="field">
+                            <label for="description">
+                                <span>Descripción resumida</span>
+                                <textarea name="description" id="description" required minlength="20" ><%= locals.oldData ? oldData.description : null %></textarea>
+                                <span class="error" aria-live="polite"></span>
+                            </label>
+                                <% if ( locals.errors && errors.description) { %>
+                                <p class="text-danger">
+                                    <%= errors.description.msg %>
+                                </p>
+                                <% } %>
+                            <label for="nutritional">
+                                <span>Información nutricional</span>
+                                <textarea name="nutritional" id="nutritional" required minlength="20" ><%= locals.oldData ? oldData.nutritional : null %></textarea>
+                                <span class="error" aria-live="polite"></span>
+                            </label>
+                                    <% if ( locals.errors && errors.nutritional) { %>
+                                        <p class="text-danger">
+                                            <%= errors.nutritional.msg %>
+                                        </p>
+                                        <% } %>
+                        </div>
+                        <fieldset class="field fieldset" id="fieldset">
+                            <legend>Categoria del alimento</legend>
+
+                            <label for="product-cachorro">
+                                <input type="radio" name="category" id="product-cachorro" value="cachorro" <%= locals.oldData && ("cachorro" === oldData.category) ? 'checked' : null %>>
+                                <span>Cachorro</span>
+                            </label>
+
+                            <label for="product-adulto">
+                                <input type="radio" name="category" id="product-adulto" value="adulto" <%= locals.oldData && ("adulto" === oldData.category) ? 'checked' : null %>>
+                                <span>Adulto</span>
+                            </label>
+
+                            <label for="product-senior">
+                                <input type="radio" name="category" id="product-senior" value="senior" <%= locals.oldData && ("senior" === oldData.category) ? 'checked' : null %>>
+                                <span>Senior</span>
+                            </label>
+                            <% if ( locals.errors && errors.category) { %>
+                                <p class="text-danger">
+                                    <%= errors.category.msg %>
+                                </p>
+                                <% } %>
+                        </fieldset>
+                        <span class="error" aria-live="polite"></span>
+                        <div class="field field-image">
+                            <div class="file-select">Agregar una imagen:
+                                <div class="upload-image__label file-select"></div>
+                                <input type="file" title="Cargar una imagen" name="image" id="productAddImage" accept="image/.jpg, .jpeg, .png" required>
+                                <span class="error" aria-live="polite"></span>
+                                <% if ( locals.errors && errors.image) { %>
+                                    <p class="text-danger">
+                                        <%= errors.image.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                        </div>
+                        <div class="button-product">
+                            <button type="submit" class="button">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer'); %>
+</body>

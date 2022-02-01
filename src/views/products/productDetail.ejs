@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Meow!'}); %>
+        <link rel="stylesheet" href="/css/productDetail.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <div class="small-container single-product">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="/images/food/<%= product.productImage %>" width="100%">
+                    </div>
+                    <div class="col-2">
+                        <h1>
+                            <%= product.productName %>
+                        </h1>
+                        <p>Meow - El mejor alimento para tu gato
+                            <%= product.productCategory %>
+                        </p>
+                        <h4>
+                            $
+                            <%= product.productPrice %>
+                        </h4>
+                        <!-- <select>
+                                    <% if (product.category) { %>
+                                        <% for (let x = 0; x < product.category.length; x++)  {%>
+                                <option>
+                                    <%= product.category[x] %>
+                                </option>
+                                <% } %>
+                                    <% } %>
+                        </select> -->
+                        <form action="/cart/addCart" method="post" class="form-inline">
+                            <input type="hidden" name="product_id" value="<%= product.product_id%>">
+                            <input type="hidden" name="price" value="<%= product.productPrice %>">
+                            <div class="single-product__input-group">
+                                <input type="number" name="quantity" value="1">
+                                <button type="submit" class="button">Añadir al carrito</button>
+                            </div>
+                        </form>
+
+                        <h3>Info Nutricional</h3>
+                        <br>
+                        <p>
+                            <%= product.nutritionalDetail  %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer'); %>
+</body>

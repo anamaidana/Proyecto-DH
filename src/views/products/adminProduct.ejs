@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Administrar'}); %>
+        <link rel="stylesheet" href="/css/homeProductos.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <div class="container crear-producto">
+                <section id="productos">
+                    <h2 class="title-crear-producto title secciones">Administrador de productos</h2>
+
+                    <div class="productos-admins">
+                        <div class="product-item search-container">
+                            <img src="/images/food/nuevo.jpeg" class="product-item__image">
+
+                            <div class="search-prod">
+                                <div class="product-item__text-container">
+                                    <form action="/products/adminProduct/search" method="GET" class="search-form">
+                                        <input type="search" name="search" class="search-input">
+                                        <button type="submit" class="search-btn">
+                                        <i class="fas fa-search search-icon"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-item product-item--new">
+                            <img src="/images/food/nuevo.jpeg" class="product-item__image">
+                            <div class="product-item__text-container">
+                                <h3 class="product-item__text title">Nuevo Producto</h3>
+                                <a href="createProduct" class="button button--small button--outline">
+                                    <i class="fas fa-plus"></i> Crear
+                                </a>
+                            </div>
+                        </div>
+                        <% products.forEach(product => { %>
+                            <div class="product-item">
+                                <a href="/products/<%= product.product_id %>" class="link-product"><img src="/images/food/<%= product.productImage %>" class="product-item__image"></a>
+                                <div class="product-item__text-container">
+                                    <h3 class="product-item__text title">
+                                        <%= product.productName %>
+                                    </h3>
+                                    <a href="editProduct/<%= product.product_id %>" class="button button--small button--outline">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </a>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+        <%- include('../partials/footer'); %>
+</body>

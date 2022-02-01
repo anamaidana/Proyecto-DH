@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Meow!'}); %>
+</head>
+
+<body>
+    <%- include('../partials/header'); %>
+        <main>
+
+            <div class="form-container">
+                <img src="/images/users/<%= user.image %>" class="thumbnail">
+                <h3 class="name">
+                    <%= user.name %>
+                </h3>
+                <p class="email">
+                    <%= user.email %>
+                </p>
+                <div class="content-btn-perfil">
+                    <a href="editProfile/<%= user.user_id %>" class="button button--small button--outline btn-perfil">
+                        <i class="fas fa-edit"></i> Editar</a>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer'); %>
+</body>

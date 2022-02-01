@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head', {pageTitle: 'Editar producto'}); %>
+        <script src="/js/editProductValidation.js" defer></script>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <main>
+            <div class="container crear-producto">
+                <div class="form-container">
+                    <h1 class="title seccion">Editar Producto</h1>
+                    <form action="/products/editProduct/<%=product.product_id %>?_method=PUT" method="POST" novalidate enctype="multipart/form-data">
+                        <div class="field">
+                            <label for="name">
+                                <span>Nombre del producto</span>
+                                <input type="text" name="name" required minlength="5" id="name" value=<%= product.productName%>>
+                                <span class="error" aria-live="polite"></span>
+                            </label>
+                            <% if ( locals.errors && errors.name) { %>
+                                <p class="text-danger">
+                                    <%= errors.name.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <div class="field">
+                            <label for="price">
+                            <span>Precio</span>
+                            <input type="number" name="price" id="price" required value=<%=  product.productPrice%>>
+                            <span class="error" aria-live="polite"></span>
+                    </label>
+                            <% if ( locals.errors && errors.price) { %>
+                                <p class="text-danger">
+                                    <%= errors.price.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <div class="field">
+                            <label for="description">
+                            <span>Descripción resumida</span>
+                            <textarea name="description" minlength="20" id="description"><%= product.shortDescription %></textarea>
+                            <span class="error" aria-live="polite"></span>
+                    </label>
+                            <% if ( locals.errors && errors.description) { %>
+                                <p class="text-danger">
+                                    <%= errors.description.msg %>
+                                </p>
+                                <% } %>
+                                    <label for="nutritional">
+                        <span>Información nutricional</span>
+                        <textarea name="nutritional" minlength="20" id="nutritional"><%= product.nutritionalDetail %></textarea>
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                                    <% if ( locals.errors && errors.nutritional) { %>
+                                        <p class="text-danger">
+                                            <%= errors.nutritional.msg %>
+                                        </p>
+                                        <% } %>
+                        </div>
+
+                        <fieldset class="field">
+                            <legend>Categoria del producto</legend>
+                            <select name="category" required>
+                                <option disabled value="#">Seleccione una categoria</option>
+                                <option value="cachorro" <%=product.productCategory=="cachorro" ? "selected" : null %>>Cachorro</option>
+                                <option value="adulto" <%=product.productCategory=="adulto" ? "selected" : null %>>Adulto</option>
+                                <option value="senior" <%=product.productCategory=="senior" ? "selected" : null %>>Senior</option>
+                                </select>
+                        </fieldset>
+                        <span class="error" aria-live="polite"></span>
+                        <div class="field">
+                            <figure>
+                                <img class="w-100 " src="/images/food/<%= product.productImage%>">
+                            </figure>
+                            <div class="file-select">Cambiar la imagen:
+                                <div class="upload-image__label file-select"></div>
+                                <input type="hidden" name="oldImagen" value="<%= product.productImage%>">
+                                <input type='file' name="image" id="productAddImage" accept="image/.jpg, .jpeg, .png" required>
+                            </div>
+                        </div>
+
+                        <div class="button-product">
+                            <button type="submit" class="button">Guardar cambios</button>
+                        </div>
+                    </form>
+                    <hr class="form-separator" />
+                    <form action="/products/<%= product.product_id %>?_method=DELETE" method="POST">
+                        <div class="button-product">
+                            <button type="submit" class="delete-button" onclick="return confirm('Estás seguro que deseas eliminar el registro?');">Eliminar este producto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer'); %>
+</body>
