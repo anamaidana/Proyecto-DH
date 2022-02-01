@@ -1,0 +1,93 @@
+[
+  {
+    "id": "pescado",
+    "name": "Pescado",
+    "description": "Trocitos de la mejor variedad de pescados con una deliciosa salsa ligera, 100% húmedo y sabroso!",
+    "nutritional": "Es un alimento completo y balanceado, 100% húmedo y sabroso! Está hecho con trocitos de la mejor variedad de pescados con una deliciosa salsa ligera, que aportan a tu gato los nutrientes que necesita para mantenerse sano y fuerte. Además, su textura y sabor son ideales para aquellos que tienen el paladar exigente.",
+    "category": [
+      "Cachorro",
+      "Adulto",
+      "Senior"
+    ],
+    "price": 590,
+    "image": "pescado.jpeg"
+  },
+  {
+    "id": "salmon",
+    "name": "Salmón",
+    "description": "Sabrosos trocitos de salmón horneado a fuego lento, que tu gato no podrá resistirse.",
+    "nutritional": "Es un alimento húmedo 100% super sabroso, completo y balanceado. Hecho de delicados trozos de salmón, sumergidos en una abundante salsa ligera y deliciosa. Es ideal para los gatos fanáticos y para aquellos que tienen el paladar exigente. Aporta a tu gato los nutrientes que necesita para mantenerse sano y fuerte!",
+    "category": [
+      "Cachorro",
+      "Adulto",
+      "Senior"
+    ],
+    "price": 600,
+    "image": "salmon.jpeg"
+  },
+  {
+    "id": "vegetariano",
+    "name": "Vegetales",
+    "description": "La mejor selección de vegetales para lograr un balance perfecto en la alimentación de tu gato.",
+    "nutritional": "Es un alimento completo y equilibrado que ayuda a mantener un buen estado de salud. Los mejores vegetales seleccionados cuidadosamente para lograr un balance perfecto en la alimentación de tu gato. Proporciona un aporte calórico moderado perfectamente adaptado a las necesidades del gato con actividad moderada, que ayuda a mantener un buen estado de salud.",
+    "category": [
+      "Cachorro",
+      "Adulto",
+      "Senior"
+    ],
+    "price": 490,
+    "image": "vegetariano.jpeg"
+  },
+  {
+    "id": "carne",
+    "name": "Carne",
+    "price": 500,
+    "description": "Suaves trocitos de la mejor carne de vaca cocidos al vapor con salsa, 100% húmedo y sabroso!",
+    "nutritional": "Es un alimento completo y equilibrado, 100% húmedo que contiene suaves trocitos de carne de vaca cocidos al vapor con salsa. Formulado con proteínas de origen animal que ayudan a proporcionar los nutrientes que tu gato necesita todos los días para estar saludable. Cada porción contribuye con la vitalidad y energía necesarias para explorar el mundo!",
+    "category": [
+      "Cachorro",
+      "Adulto",
+      "Senior"
+    ],
+    "image": "carne.jpeg"
+  },
+  {
+    "id": "pollo",
+    "name": "Pollo",
+    "description": "Deliciosos trocitos de pollo con abundante salsa, para que tu gato disfrute en cualquier momento.",
+    "nutritional": "Es un alimento completo y equilibrado, 100% húmedo super sabroso. Cada porción combina un sabor delicado, que lo hace delicioso y nutritivo! Formulado con proteínas de pollo, 90% de pechuga y muslo con abundante salsa, para que tu gato disfrute en cualquier momento. Proporciona un aporte calórico moderado perfectamente adaptado a las necesidades del gato con actividad moderada, que ayuda a mantener un buen estado de salud.",
+    "category": [
+      "Cachorro",
+      "Adulto",
+      "Senior"
+    ],
+    "price": 360,
+    "image": "pollo.jpeg"
+  },
+  {
+    "id": "atun",
+    "name": "Atún",
+    "description": "Delicados trozos de atún con una deliciosa salsa, ideal para aquellos que tienen el paladar exigente.",
+    "nutritional": "Es un alimento húmedo 100% super sabroso, completo y balanceado. Hecho de delicados trozos de atún, sumergidos en una abundante salsa ligera y deliciosa. Es ideal para los gatos fanáticos de las salsas y para aquellos que tienen el paladar exigente. Aporta a tu gato los nutrientes que necesita para mantenerse sano y fuerte!",
+    "category": [
+      "Cachorro",
+      "Adulto",
+      "Senior"
+    ],
+    "price": "390",
+    "image": "atun.jpeg"
+  },
+  {
+    "id": "prueba",
+    "name": "Prueba",
+    "description": "Probando editar cada campo del producto, inclusive quitando uno de los checkbox para ver si los guarda como array.\r\n",
+    "nutritional": "Probamos editar un nuevo producto, esperando que funcione.",
+    "category": [
+      "Cachorro",
+      "Adulto",
+      "Senior"
+    ],
+    "price": "1250",
+    "image": "img-cafetera-moulinex.jpg"
+  }
+]

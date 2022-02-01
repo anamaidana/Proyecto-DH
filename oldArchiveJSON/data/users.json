@@ -1,0 +1,106 @@
+[
+ {
+  "id": 1,
+  "name": "Administrador",
+  "email": "admin@meow.com.ar",
+  "password": "$2b$10$ktcrasllk9wPIVILDn3QWeCHMoZiafnU1VusN4ecdqXxz9OaQmbH6",
+  "confirmPassword": "admin",
+  "image": "default.png"
+ },
+ {
+  "id": 2,
+  "name": "Luciana García",
+  "email": "lucia@garcia.com",
+  "password": "$2b$10$Oczr.HPT86inDE4BCZ2heO/UrygmRqHcR8cyZHUSN1TgqMVeSSj2K",
+  "confirmPassword": "1234",
+  "image": "uno.png"
+ },
+ {
+  "id": 3,
+  "name": "Alicia Mondino",
+  "email": "alicia@mondino.com",
+  "password": "$2b$10$Oczr.HPT86inDE4BCZ2heO/UrygmRqHcR8cyZHUSN1TgqMVeSSj2K",
+  "confirmPassword": "1234",
+  "image": "dos.png"
+ },
+ {
+  "id": 4,
+  "name": "Analia Maidana",
+  "email": "analiamaidana@gmail.com",
+  "password": "$2b$10$4S2EBQr1kXkoJ5oclj9.GuJDxKbIhd7AljI/YttOv7qwaE4PUW8u.",
+  "confirmar-contraseña": "123456",
+  "image": "dos.png"
+ },
+ {
+  "id": 5,
+  "name": "Luis Viale",
+  "email": "luisviale@gmail.com",
+  "password": "$2b$10$wTF7qhckhwa.eMwUYm.s1O21ilBJhlkrslbrLuVPrKphFYE/.clvS",
+  "confirmar-contraseña": "654321",
+  "image": "tres.png"
+ },
+ {
+  "id": 6,
+  "name": "Natalia Krivanek",
+  "email": "ludmik@gmail.com",
+  "password": "$2b$10$SiBVfPL95j4Rzxy7UixGFu/smN4sZOSXb8x9BQWKtBXx/ELsRBO/i",
+  "confirmPassword": "1234",
+  "image": "uno.png"
+ },
+ {
+  "id": 7,
+  "name": "Pedro Lopez",
+  "email": "pedroperez@gmail.com",
+  "password": "$2b$10$l0G/x9F.zAbF2JKuu7M/oulyIEJhg2aitsJk91BwgcixOPZwSfBFS",
+  "confirmPassword": "4321",
+  "image": "img-tv-samsung-smart.jpg"
+ },
+ {
+  "id": 8,
+  "name": "luis alberdi",
+  "email": "luisalberdi@gmail.com",
+  "password": "$2b$10$twf5./hMzhhZAJ7JU7.4auM90.dIesSDm.DDc1uXa7jJU6gzNpo.m",
+  "confirmPassword": "$2b$10$zPtVbXsTbVhFxKpvhl41l.YarH2EWjAOkK9WUqKbxhuuMCz6jsZXW",
+  "image": "luis alberdi.jpg"
+ },
+ {
+  "id": 9,
+  "name": "Test",
+  "email": "test@test.com",
+  "password": "$2b$10$r2NXQUqIEu4pfL40sc326.Caw3PwLhUBZGp8lnlJg3jWqrc3DImna",
+  "confirmPassword": "$2b$10$pXRkTu6eUKRZaYYm8kk8GeEB1Z8WVJKjnlJkx2gXyUkZ./sAzoISm",
+  "image": "1630169784521_img_.png"
+ },
+ {
+  "id": 10,
+  "name": "JUan",
+  "email": "tesst@test.com",
+  "password": "$2b$10$O4O83MIj5O/Go6MxiKDjseE73.Zc22lO42bHjLw3CPNNxnkLVr8ra",
+  "confirmPassword": "$2b$10$gOIueC7OuuwAPq7MejJikOpmopOluGLSf6CyJCO1qliGtW6r87Li6",
+  "image": "1630170564847_img_.png"
+ },
+ {
+  "id": 11,
+  "name": "Juan",
+  "email": "tessst@test.com",
+  "password": "$2b$10$2nbnPtGJHB9XkKC2IqKyzes6nvv8nEI9ACUdnW7TTTezuPD9bfG0W",
+  "confirmPassword": "$2b$10$Et5YaZAyPiOwFO8wYVrNNuZQvVMgR3bI1Uue9E0/l7lZ05QTp9hbm",
+  "image": "1630171736883_img_.png"
+ },
+ {
+  "id": 12,
+  "name": "Juan",
+  "email": "tesssst@test.com",
+  "password": "$2b$10$T5rK5ri.3RJbrVGPNghLR.WoifEkrkbf23gO1rajZeNKhU9O0gpqK",
+  "confirmPassword": "$2b$10$9A8.y6K9gTM0JIVBYmoQb.U5gOXIVeZlEXMqmwFFA9LisPjxJQn3m",
+  "image": "1630171778978_img_.png"
+ },
+ {
+  "id": 13,
+  "name": "Juan",
+  "email": "teassssst@test.com",
+  "password": "$2b$10$WI9mZR14nDiU5rEvD9nkPOhIkdPvBx6fzE3czTN6KZpvmuF8ABMV2",
+  "confirmPassword": "$2b$10$tBTrgd2fWmVUoZ5y3Lg11e2ttvQEOmD9DwplRnXVnD/.Hk0XtrjO6",
+  "image": "avatar1630176511757.png"
+ }
+]
